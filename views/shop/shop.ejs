@@ -1,0 +1,518 @@
+<%- include ../includes/head.ejs %>
+
+
+</head>
+
+<body>
+
+<!--wrapper start-->
+<div class="wrapper shop-fullwidth-wrapper">
+
+  <!--== Start Preloader Content ==-->
+  <div class="preloader-wrap">
+    <div class="preloader">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!--== End Preloader Content ==-->
+
+  <!--== Start Header Wrapper ==-->
+  <header class="header-area header-default sticky-header">
+    <div class="container-fluid">
+      <div class="row row-gutter-0 align-items-center">
+        <div class="col-4 col-xs-3 col-sm-3 col-md-3 col-xl-2 col-xxl-3">
+          <div class="header-logo-area">
+            <a href="index.html">
+              <img class="logo-main" src="../assets/img/brand-logo/logo2.png" alt="Logo" />
+              <img class="logo-light" src="assets/img/brand-logo/logo2.png" alt="Logo" />
+            </a>
+          </div>
+        </div>
+        <div class="col-md-7 col-xl-7 col-xxl-6 d-none d-xl-block">
+          <div class="header-align">
+            <div class="header-navigation-area">
+              <%- include ../includes/header.ejs %>
+            </div>
+          </div>
+        </div>
+        <div class="col-8 col-xs-9 col-sm-9 col-md-9 col-xl-3 col-xxl-3">
+          <div class="header-action-area">
+            <div class="header-action-search">
+              <button class="btn-search btn-search-menu">
+                <i class="lastudioicon-zoom-1"></i>
+              </button>
+            </div>
+            <div class="header-action-login">
+              <button class="btn-login" onclick="window.location.href='login.html'">
+                <i class="lastudioicon-single-01-2"></i>
+              </button>
+            </div>
+            <button class="btn-menu d-xl-none">
+              <i class="lastudioicon-menu-3-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--== End Header Wrapper ==-->
+  
+  <main class="main-content">
+    <!--== Start Page Title Area ==-->
+    <section class="page-title-area bg-img" data-bg-img="assets/img/photos/p1.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-title-content">
+              <h2 class="title">Collection I Spring</h2>
+              <div class="bread-crumbs"><a href="/">Home<span class="breadcrumb-sep">></span></a><span class="active">Shop</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Page Title Area ==-->
+
+    <!--== Start Products Area Wrapper ==-->
+    <div class="product-area shop-fullwidth-area style-two">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="shop-toolbar-wrap">
+              <div class="shop-toolbar-left">
+                <!-- <div class="product-showing-status">
+                  <p class="count-result">Showing 1–12 of 88 results</p>
+                </div> -->
+              </div>
+              <div class="shop-toolbar-right">
+                <!-- <div class="product-sorting-menu product-view-count">
+                  <span class="current">Show 12 <i class="lastudioicon-down-arrow"></i></span>
+                  <ul>
+                    <li class="active"><a href="shop.html" class="active">Show 12</a></li>
+                    <li><a href="shop.html">Show 15</a></li>
+                    <li><a href="shop.html">Show 30</a></li>
+                  </ul>
+                </div>
+                <div class="product-sorting-menu product-view-count">
+                  <span class="current">Filters <i class="lastudioicon-down-arrow"></i></span>
+                  <ul>
+                    <li class="active"><a href="shop.html" class="active">Filters</a></li>
+                    <li><a href="shop.html">Categories</a></li>
+                    <li><a href="shop.html">Tags</a></li>
+                  </ul>
+                </div>
+                <div class="product-sorting-menu product-sorting">
+                  <span class="current">Sort by Default <i class="lastudioicon-down-arrow"></i></span>
+                  <ul>
+                    <li class="active"><a href="shop.html" class="active">Sort by Default</a></li>
+                    <li><a href="shop.html">Sort by Popularity</a></li>
+                    <li><a href="shop.html">Sort by Rated</a></li>
+                    <li><a href="shop.html">Sort by Latest</a></li>
+                    <li><a href="shop.html">Sort by Price: <i class="lastudioicon-arrow-up"></i></a></li>
+                    <li><a href="shop.html">Sort by Price: <i class="lastudioicon-arrow-down"></i></a></li> 
+                  </ul>
+                </div> -->
+                <!-- <div class="product-view-mode">
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <button class="nav-link" id="nav-list-tab" data-bs-toggle="tab" data-bs-target="#nav-list" type="button" role="tab" aria-controls="nav-list" aria-selected="false"><i class="lastudioicon-list-bullet-2"></i></button>
+                      <button class="nav-link active" id="nav-grid-tab" data-bs-toggle="tab" data-bs-target="#nav-grid" type="button" role="tab" aria-controls="nav-grid" aria-selected="true"><i class="lastudioicon-microsoft"></i></button>
+                    </div>
+                  </nav>
+                </div> -->
+              </div>
+            </div>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
+                <div class="row row-gutter-60 product-items-style4">
+                  <% prods.forEach((item) => { %>
+                    <div class="col-sm-6 col-md-4">
+                      <!-- Start Product Item -->
+                      <div class="product-item">
+                        <div class="product-thumb figure">
+                          <a href="/product/<%= item._id %>">
+                            <img src="<%= item.url %>" alt="Moren-Shop">
+                            <img class="image-hover" src="<%= item.url2 %>" alt="<%= item.title %>">
+                            <span class="thumb-overlay"></span>
+                          </a>
+                        </div>
+                        <div class="product-info info-style2">
+                          <div class="content-inner">                  
+                            <h4 class="title"><a href="/product/<%= item._id %>"><%= item.title %></a></h4>
+                            <div class="prices">
+                              <span class="price">$<%= item.price %></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End Product Item -->
+                    </div>
+                  <% }) %>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
+                <div class="row">
+                  <div class="col-12 product-items-list">
+                    <!-- Start Product Item -->
+                    <div class="product-item ">
+                      <div class="product-thumb">
+                        <a href="shop-single-product.html">
+                          <img src="assets/img/shop/list1.jpg" alt="Moren-Shop">
+                          <span class="thumb-overlay"></span>
+                        </a>
+                        <div class="product-action">
+                          <a class="action-quick-view ht-tooltip" data-tippy-content="Quick View" href="javascript:void(0);" title="Wishlist">
+                            <i class="lastudioicon-search-zoom-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="product-info">
+                        <div class="content-inner">                  
+                          <h4 class="title"><a href="shop-single-product.html">Believer Delicate Earrings</a></h4>
+                          <div class="prices">
+                            <span class="price">£69.00</span>
+                          </div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla quis ipsum enim viverra. Enim in morbi tincidunt ante luctus tincidunt integer. Sed adipiscing vehicula.</p>
+                          <div class="product-action-btn">
+                            <a class="btn-add-cart btn-theme" href="shop-cart.html">Add to cart</a>
+                            <a class="btn-wishlist" href="shop-wishlist.html">
+                              <i class="lastudioicon-heart-2"></i>
+                            </a>
+                            <a class="btn-compare" href="shop-compare.html">
+                              <i class="lastudioicon-compare"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Product Item -->
+
+                    <!-- Start Product Item -->
+                    <div class="product-item ">
+                      <div class="product-thumb">
+                        <a href="shop-single-product.html">
+                          <img src="assets/img/shop/list2.jpg" alt="Moren-Shop">
+                          <span class="thumb-overlay"></span>
+                        </a>
+                        <div class="product-action">
+                          <a class="action-quick-view ht-tooltip" data-tippy-content="Quick View" href="javascript:void(0);" title="Wishlist">
+                            <i class="lastudioicon-search-zoom-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="product-info">
+                        <div class="content-inner">                  
+                          <h4 class="title"><a href="shop-single-product.html">Believer Delicate Earrings</a></h4>
+                          <div class="prices">
+                            <span class="price">£39.00</span>
+                          </div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla quis ipsum enim viverra. Enim in morbi tincidunt ante luctus tincidunt integer. Sed adipiscing vehicula.</p>
+                          <div class="product-action-btn">
+                            <a class="btn-add-cart btn-theme" href="shop-cart.html">Add to cart</a>
+                            <a class="btn-wishlist" href="shop-wishlist.html">
+                              <i class="lastudioicon-heart-2"></i>
+                            </a>
+                            <a class="btn-compare" href="shop-compare.html">
+                              <i class="lastudioicon-compare"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Product Item -->
+
+                    <!-- Start Product Item -->
+                    <div class="product-item ">
+                      <div class="product-thumb">
+                        <a href="shop-single-product.html">
+                          <img src="assets/img/shop/list3.jpg" alt="Moren-Shop">
+                          <span class="thumb-overlay"></span>
+                        </a>
+                        <div class="product-action">
+                          <a class="action-quick-view ht-tooltip" data-tippy-content="Quick View" href="javascript:void(0);" title="Wishlist">
+                            <i class="lastudioicon-search-zoom-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="product-info">
+                        <div class="content-inner">                  
+                          <h4 class="title"><a href="shop-single-product.html">Black & Gold Forever Double Choker Necklace</a></h4>
+                          <div class="prices">
+                            <span class="price">£39.00</span>
+                          </div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla quis ipsum enim viverra. Enim in morbi tincidunt ante luctus tincidunt integer. Sed adipiscing vehicula.</p>
+                          <div class="product-action-btn">
+                            <a class="btn-add-cart btn-theme" href="shop-cart.html">Add to cart</a>
+                            <a class="btn-wishlist" href="shop-wishlist.html">
+                              <i class="lastudioicon-heart-2"></i>
+                            </a>
+                            <a class="btn-compare" href="shop-compare.html">
+                              <i class="lastudioicon-compare"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Product Item -->
+
+                    <!-- Start Product Item -->
+                    <div class="product-item ">
+                      <div class="product-thumb">
+                        <a href="shop-single-product.html">
+                          <img src="assets/img/shop/list4.jpg" alt="Moren-Shop">
+                          <span class="thumb-overlay"></span>
+                        </a>
+                        <div class="product-action">
+                          <a class="action-quick-view ht-tooltip" data-tippy-content="Quick View" href="javascript:void(0);" title="Wishlist">
+                            <i class="lastudioicon-search-zoom-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="product-info">
+                        <div class="content-inner">                  
+                          <h4 class="title"><a href="shop-single-product.html">Black check texture shirt</a></h4>
+                          <div class="prices">
+                            <span class="price">£19.90</span>
+                          </div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla quis ipsum enim viverra. Enim in morbi tincidunt ante luctus tincidunt integer. Sed adipiscing vehicula.</p>
+                          <div class="product-action-btn">
+                            <a class="btn-add-cart btn-theme" href="shop-cart.html">Add to cart</a>
+                            <a class="btn-wishlist" href="shop-wishlist.html">
+                              <i class="lastudioicon-heart-2"></i>
+                            </a>
+                            <a class="btn-compare" href="shop-compare.html">
+                              <i class="lastudioicon-compare"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Product Item -->
+
+                    <!-- Start Product Item -->
+                    <div class="product-item ">
+                      <div class="product-thumb">
+                        <a href="shop-single-product.html">
+                          <img src="assets/img/shop/list5.jpg" alt="Moren-Shop">
+                          <span class="thumb-overlay"></span>
+                        </a>
+                        <div class="product-action">
+                          <a class="action-quick-view ht-tooltip" data-tippy-content="Quick View" href="javascript:void(0);" title="Wishlist">
+                            <i class="lastudioicon-search-zoom-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="product-info">
+                        <div class="content-inner">                  
+                          <h4 class="title"><a href="shop-single-product.html">Black check texture shirt</a></h4>
+                          <div class="prices">
+                            <span class="price">£19.90</span>
+                          </div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla quis ipsum enim viverra. Enim in morbi tincidunt ante luctus tincidunt integer. Sed adipiscing vehicula.</p>
+                          <div class="product-action-btn">
+                            <a class="btn-add-cart btn-theme" href="shop-cart.html">Add to cart</a>
+                            <a class="btn-wishlist" href="shop-wishlist.html">
+                              <i class="lastudioicon-heart-2"></i>
+                            </a>
+                            <a class="btn-compare" href="shop-compare.html">
+                              <i class="lastudioicon-compare"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Product Item -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pagination-area">
+              <nav>
+                <ul class="page-numbers">
+                  <li>
+                    <a class="page-number active" href="blog.html">1</a>
+                  </li>
+                  <li>
+                    <a class="page-number" href="blog.html">2</a>
+                  </li>
+                  <li>
+                    <a class="page-number" href="blog.html">3</a>
+                  </li>
+                  <li>
+                    <a class="page-number" href="blog.html">4</a>
+                  </li>
+                  <li>
+                    <a class="page-numbe" href="blog.html">…</a>
+                  </li>
+                  <li>
+                    <a class="page-number" href="blog.html">6</a>
+                  </li>
+                  <li>
+                    <a class="page-number" href="blog.html">7</a>
+                  </li>
+                  <li>
+                    <a class="page-number" href="blog.html">8</a>
+                  </li>
+                  <li>
+                    <a class="page-number next" href="blog.html">
+                      <i class="icofont-long-arrow-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Products Area Wrapper ==-->
+  </main>
+
+  <!--== Start Footer Area Wrapper ==-->
+  <%- include ../includes/footer.ejs%>
+  <!--== End Footer Area Wrapper ==-->
+  
+  <!--== Scroll Top Button ==-->
+  <div class="scroll-to-top"><span class="icofont-arrow-up"></span></div>
+
+  <!--== Start Product Quick View ==-->
+  <aside class="product-quick-view-modal">
+    <div class="product-quick-view-inner">
+      <div class="product-quick-view-content">
+        <button type="button" class="btn-close">
+          <span class="close-icon"><i class="lastudioicon-e-remove"></i></span>
+        </button>
+        <div class="row row-gutter-0">
+          <div class="col-lg-6 col-md-6 col-12">
+            <div class="thumb">
+              <img src="assets/img/shop/quick-view1.jpg" alt="Moren-Shop">
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-12">
+            <div class="single-product-info">
+              <h4 class="title">Product Simple</h4>
+              <div class="product-rating">
+                <div class="review">
+                  <p><span></span>99 in stock</p>
+                </div>
+              </div>
+              <div class="prices">
+                <span class="price">£49.90</span>
+              </div>
+              <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fringilla quis ipsum enim viverra. Enim in morbi tincidunt ante luctus tincidunt integer. Sed adipiscing vehicula.</p>
+              <div class="quick-product-action">
+                <div class="action-top">
+                  <div class="pro-qty-area">
+                    <div class="pro-qty">
+                      <input type="text" id="quantity" title="Quantity" value="1">
+                    <a href="#" class="inc qty-btn">+</a><a href="#" class="dec qty-btn">-</a></div>
+                  </div>
+                  <a class="btn-theme btn-black" href="shop-cart.html">Add to cart</a>
+                </div>
+                <div class="action-bottom">
+                  <a class="btn-wishlist" href="shop-wishlist.html"><i class="labtn-icon labtn-icon-wishlist"></i>Add to wishlist</a>
+                  <a class="btn-compare" href="shop-compare.html"><i class="labtn-icon labtn-icon-compare"></i>Add to compare</a>
+                </div>
+              </div>
+              <div class="product-ratting">
+                <div class="product-sku">
+                  SKU: <span>REF. LA-276</span>
+                </div>
+              </div>
+              <div class="product-categorys">
+                <div class="product-category">
+                  Category: <span>Uncategorized</span>
+                </div>
+              </div>
+              <div class="widget">
+                <h3 class="title">Tags:</h3>
+                <div class="widget-tags">
+                  <ul>
+                    <li><a href="shop.html">Blazer,</a></li>
+                    <li><a href="shop.html">Fashion,</a></li>
+                    <li><a href="shop.html">wordpress,</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="product-social-info">
+                <a href="#"><span class="lastudioicon-b-facebook"></span></a>
+                <a href="#"><span class="lastudioicon-b-twitter"></span></a>
+                <a href="#"><span class="lastudioicon-b-linkedin"></span></a>
+                <a href="#"><span class="lastudioicon-b-pinterest"></span></a>
+              </div>
+              <div class="product-nextprev">
+                <a href="shop-single-product.html">
+                  <i class="lastudioicon-arrow-left"></i>
+                </a>
+                <a href="shop-single-product.html">
+                  <i class="lastudioicon-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="canvas-overlay"></div>
+  </aside>
+  <!--== End Product Quick View ==-->
+
+  <!--== Start Aside Search Menu ==-->
+  <div class="search-box-wrapper">
+    <div class="search-box-content-inner">
+      <div class="search-box-form-wrap">
+        <div class="search-note">
+          <p>Start typing and press Enter to search</p>
+        </div>
+        <form action="#" method="post">
+          <div class="search-form position-relative">
+            <label for="search-input" class="sr-only">Search</label>
+            <input type="search" class="form-control" placeholder="Search" id="search-input">
+            <button class="search-button"><i class="lastudioicon-zoom-1"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--== End Aside Search Menu ==-->
+    <a href="javascript:;" class="search-close"><i class="lastudioicon-e-remove"></i></a>
+  </div>
+  <!--== End Aside Search Menu ==-->
+
+
+  <!--== Start Side Menu ==-->
+  <aside class="off-canvas-wrapper">
+    <div class="off-canvas-inner">
+      <div class="off-canvas-overlay d-none"></div>
+      <!-- Start Off Canvas Content Wrapper -->
+      <div class="off-canvas-content">
+        <!-- Off Canvas Header -->
+        <div class="off-canvas-header">
+          <div class="close-action">
+            <button class="btn-close"><i class="icofont-close-line"></i></button>
+          </div>
+        </div>
+
+        <div class="off-canvas-item">
+          <!-- Start Mobile Menu Wrapper -->
+          <div class="res-mobile-menu">
+            <!-- Note Content Auto Generate By Jquery From Main Menu -->
+          </div>
+          <!-- End Mobile Menu Wrapper -->
+        </div>
+        <!-- Off Canvas Footer -->
+        <div class="off-canvas-footer"></div>
+      </div>
+      <!-- End Off Canvas Content Wrapper -->
+    </div>
+  </aside>
+  <!--== End Side Menu ==-->
+</div>
+
+<!--=======================Javascript============================-->
+
+<%- include ../includes/end.ejs %>
