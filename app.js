@@ -110,7 +110,17 @@ app.use((error, req, res, next) => {
     });
     console.log(error)
 })
-// const uri = "mongodb+srv://admin:<password>@cluster0.drdrxny.mongodb.net/?retryWrites=true&w=majority"
+
+app.post('/webhook', (req, res) => {
+  const event = req.body;
+  // Process the event here
+  console.log('Received event:', event);
+  
+  // Send a response to acknowledge receipt of the event
+  res.status(200).send('Webhook received successfully');
+});
+
+
 mongoose.connect(MONGO_DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
     app.listen(2080);
