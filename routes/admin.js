@@ -27,7 +27,7 @@ router.post(
       .trim(),
     body('price').isFloat(),
     body('description')
-      .isLength({ min: 3, max: 200 })
+      .isLength({ min: 3, max: 900 })
       .trim()
   ],
   adminController.postAddProduct
